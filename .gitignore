@@ -1,3 +1,7 @@
+# Editor / tooling
+.vscode/
+.specstory/
+
 # Gradle
 .gradle/
 build/
