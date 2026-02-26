@@ -1,0 +1,10 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Script classpath (generated)
+scripts/.kotlin-classpath
+
+# ktjs: scaffolded script subprojects (generated when running .cli.kts)
+ktjs/scripts/*/
