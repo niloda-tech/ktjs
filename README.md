@@ -6,7 +6,7 @@ Portable copy of **ktjs** (Kotlin/JS CLI runner) and **JVM script runner** for `
 
 - **`install.sh`** – Installs ktjs: creates `ktjs/ktjs` and symlinks it to `~/.local/bin/ktjs` (or a custom path). After install, run `ktjs` from anywhere; the script resolves the workspace via the symlink.
 - **`ktjs/`** – Kotlin Multiplatform project that transpiles `*.cli.kts` to JavaScript (Node/Bun).
-- **`ktjs/run-cli.sh`** – Runs a `.cli.kts` file: scaffolds a subproject, compiles to JS, runs with bun (or node).
+- **`run-cli.sh`** – Runs a `.cli.kts` file: scaffolds a subproject, compiles to JS, runs with bun (or node).
 - **`ktjs/ktjs`** – Executable copy of `run-cli.sh` created by `install.sh`; used as the `ktjs` command when installed.
 - **`scripts/run-kotlin.sh`** – Runs any `.kts` file on the JVM with a Clikt classpath.
 - **`scripts/hello.cli.kts`** – Example for **ktjs** (uses `CliScript` / `runScript`; transpiled to JS).
@@ -35,7 +35,7 @@ Ensure the install directory (e.g. `~/.local/bin`) is on your PATH. The symlink 
 From workspace root:
 
 ```bash
-./ktjs/run-cli.sh scripts/hello.cli.kts -- --name World --repeat 2
+./run-cli.sh scripts/hello.cli.kts -- --name World --repeat 2
 ```
 
 If you ran `install.sh`, you can use `ktjs` from anywhere (run from this workspace or with an absolute script path):
@@ -44,7 +44,7 @@ If you ran `install.sh`, you can use `ktjs` from anywhere (run from this workspa
 ktjs scripts/hello.cli.kts -- --name World --repeat 2
 ```
 
-Or make the script executable and run it (shebang calls `ktjs/run-cli.sh`):
+Or make the script executable and run it (shebang calls `run-cli.sh`):
 
 ```bash
 chmod +x scripts/hello.cli.kts
@@ -72,6 +72,6 @@ Then run any `.kts` (including `example.cli.kts`):
 
 1. Copy the whole `ktjs-cli-workspace` folder to where you want (or open it in Cursor as a folder).
 2. From its root, run `./gradlew writeScriptClasspath` if you use the JVM runner.
-3. Run `./ktjs/run-cli.sh scripts/hello.cli.kts -- --help` to confirm ktjs.
+3. Run `./run-cli.sh scripts/hello.cli.kts -- --help` to confirm ktjs.
 4. (Optional) Run `./install.sh` to symlink `ktjs` into `~/.local/bin` and use the `ktjs` command from anywhere.
 5. Add your own `*.cli.kts` under `scripts/` and run them with either runner as above.
