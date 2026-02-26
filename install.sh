@@ -3,7 +3,7 @@
 # symlinks it to ~/.local/bin/ktjs (or DEST if given).
 #
 # Usage:
-#   ./install.sh              # create ktjs and symlink to ~/.local/bin/ktjs
+#   ./install.sh              # create ktjs/ktjs and symlink to ~/.local/bin/ktjs
 #   ./install.sh [DEST]       # symlink to DEST/ktjs instead (e.g. /usr/local/bin)
 #
 # With a symlink, the script runs from this workspace; keep this directory in place.
@@ -11,8 +11,8 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]:-$0}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR" && pwd)"
-KTJS_RUNNER="$REPO_ROOT/run-cli.sh"
-KTJS_BIN="$REPO_ROOT/ktjs"
+KTJS_RUNNER="$REPO_ROOT/ktjs/run-cli.sh"
+KTJS_BIN="$REPO_ROOT/ktjs/ktjs"
 
 if [[ ! -f "$KTJS_RUNNER" ]]; then
     echo "Error: run-cli.sh not found at $KTJS_RUNNER" >&2

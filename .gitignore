@@ -1,7 +1,6 @@
 # Editor / tooling
 .vscode/
 .specstory/
-.idea/
 
 # Gradle
 .gradle/

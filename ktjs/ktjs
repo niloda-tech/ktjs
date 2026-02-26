@@ -2,10 +2,10 @@
 # Runner for *.cli.kts scripts — scaffolds a Kotlin/JS subproject, builds, and runs with bun.
 #
 # Usage (from repo root):
-#   run-cli.sh scripts/hello.cli.kts -- --name World
+#   ktjs/run-cli.sh scripts/hello.cli.kts -- --name World
 #
 # Or via shebang in .cli.kts files (when run from repo root):
-#   #!/usr/bin/env -S bash -c '"$(git rev-parse --show-toplevel)/run-cli.sh" "$0" "$@"'
+#   #!/usr/bin/env -S bash -c '"$(git rev-parse --show-toplevel)/ktjs/run-cli.sh" "$0" "$@"'
 #
 # Requires: bun (or node), JDK 21+, Gradle wrapper at repo root.
 # REPO_ROOT: from git if available, else from this script's directory (..).
